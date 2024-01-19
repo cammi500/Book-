@@ -5,8 +5,8 @@ import axios from 'axios'
 import router from './router'
 
 
+axios.defaults.baseURL = "http://localhost:8000/api";
 
-axios.defaults.baseUrl ="http://localhost:8000/api"
 
 
   const app =createApp(App);
