@@ -17,7 +17,7 @@ class BookController extends Controller
         
        try {
         // thrown new Exception('error');
-        return Book::filter(request(['category']))->paginate(6);
+        return Book::filter(request(['category']))->with('category:id,name')->orderBy('created_at','desc')->paginate(6);
        }catch(Exception $e){
         return response()->json([
                 'message' => $e->getMessage(),

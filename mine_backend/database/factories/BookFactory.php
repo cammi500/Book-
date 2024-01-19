@@ -19,8 +19,8 @@ class BookFactory extends Factory
     {
         return [
            'title'=>fake()->sentence(),
-           'image'=>fake()->paragraph(),
-           'description'=>fake()->imageUrl(),
+           'image'=>fake()->imageUrl(),
+           'description'=>fake()->paragraph(),
            'category_id'=>Category::factory()
         ];
     }

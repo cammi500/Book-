@@ -12,11 +12,13 @@ class Book extends Model
     public function category(){
         return $this->belongsTo(Category::class);
     }
-
-    public function scopeFilter($query,$filters){
-        if(isset($filters['category'])){
-            $query->whereHas('category',function ($catQuery) use($filters){
-                $catQuery->where('name',$filters['category']);
+    
+    public function scopeFilter($query, $filters)
+    {
+        //if filters array has category, we should combine the query
+        if (isset($filters['category']) && $filters['category'] !== 'all') {
+            $query->whereHas('category', function ($catQuery) use ($filters) {
+                $catQuery->where('name', $filters['category']);
             });
         }
     }

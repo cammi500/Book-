@@ -4,7 +4,7 @@ import BookPage from '@/pages/BookPage.vue'
 
 const routes =[
     {path:"/", component :Home, name:'home'},
-    {path:"/detail", component :Detail,name:'detail'},
+    {path:"/book/:id", component :Detail,name:'detail'},
     {path:"/bookPage", component :BookPage,name:'form'},
 ]
 export default routes;
